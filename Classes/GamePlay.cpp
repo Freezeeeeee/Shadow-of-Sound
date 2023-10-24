@@ -240,11 +240,11 @@ bool GamePlay::init()
 				Game_file.pop_front();
 			}
 			Timelabel2->setString(table);
-		}*/
+		}
 		if (keyCode == EventKeyboard::KeyCode::KEY_SPACE && !Play_End)
 		{
 			GameEnd();
-		}
+		}*/
 	};
 	//松开按键时
 	listener->onKeyReleased = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -586,8 +586,7 @@ void GamePlay::GameEnd()
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	RecJson.Accept(writer);
-	std::string filepath = FileUtils::getInstance()->fullPathForFilename("Record/GameRecord.json");
-	FILE* Readfile = fopen("../Resources/Record/GameRecord.json", "wb");
+	FILE* Readfile = fopen("Resources/Record/GameRecord.json", "wb");
 	//不知道为什么在这cocos2d-x不能直接用相对路径,又可以了
 	//FILE* Readfile = fopen(filepath.c_str(), "wb");
 	//经过更改后就又好了

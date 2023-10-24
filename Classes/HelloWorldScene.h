@@ -18,6 +18,8 @@ public:
 
     void gamesta(Ref* pSender);//统计
 
+    void gamemyself(Ref* pSender);//统计
+
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 };

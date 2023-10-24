@@ -2,6 +2,7 @@
 #include "GamePick.h"
 #include "GameSet.h"
 #include "GameStastis.h"
+#include "GameMyself.h"
 #include <cocos/editor-support/cocostudio/SimpleAudioEngine.h>
 using namespace CocosDenshion;
 
@@ -30,14 +31,18 @@ bool HelloWorld::init()
         CC_CALLBACK_1(HelloWorld::gameset, this));//设置
     auto StaItem = MenuItemImage::create("Picture/Butt/Statistics.png", "Picture/Butt/Statistics.png",
         CC_CALLBACK_1(HelloWorld::gamesta, this));//统计
+    auto MyItem = MenuItemImage::create("Picture/Butt/Myself.png", "Picture/Butt/Myself.png",
+        CC_CALLBACK_1(HelloWorld::gamemyself, this));//本人
 
     SetItem->setAnchorPoint(Vec2(1, 0));
     SetItem->setPosition(Vec2(visibleSize.width - 10, 10));
     StaItem->setAnchorPoint(Vec2(1, 0));
     StaItem->setPosition(Vec2(visibleSize.width - 80, 10));
+    MyItem->setAnchorPoint(Vec2(1, 0));
+    MyItem->setPosition(Vec2(visibleSize.width - 150, 10));
 
     // create menu, it's an autorelease object
-    auto menu = Menu::create(SetItem, StaItem, NULL);
+    auto menu = Menu::create(SetItem, StaItem,MyItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
@@ -122,5 +127,11 @@ void HelloWorld::gameset(Ref* pSender)
 void HelloWorld::gamesta(Ref* pSender)
 {
     Scene* scene = GameStastis::createScene();
+    Director::getInstance()->pushScene(TransitionFade::create(1.5, scene));
+}
+
+void HelloWorld::gamemyself(Ref* pSender)
+{
+    Scene* scene = GameMyself::createScene();
     Director::getInstance()->pushScene(TransitionFade::create(1.5, scene));
 }

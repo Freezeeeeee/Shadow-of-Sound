@@ -110,8 +110,7 @@ void GameSet::backmeun()
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	RecJson.Accept(writer);
-	std::string filepath = FileUtils::getInstance()->fullPathForFilename("Record/GameSet.json");
-	FILE* Readfile = fopen(filepath.c_str(), "wb");
+	FILE* Readfile = fopen("Resources/Record/GameSet.json", "wb");
 	fputs(buffer.GetString(), Readfile);
 	fclose(Readfile);
 	Director::getInstance()->popScene();
