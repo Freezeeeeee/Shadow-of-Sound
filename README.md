@@ -37,3 +37,5 @@ cocos官网：https://www.cocos.com
 C++游戏开发-基于cocos2dx4.0-环境安装：https://www.bilibili.com/video/BV1g34y1n7HQ/?spm_id_from=333.337.search-card.all.click&vd_source=50b13665151ff97128eb1f1e95184d0a
 
 cocos学习笔记：https://blog.51cto.com/shahdza/category2/p_3
+
+#### 我的bilibili账号：神渣冬小狼：https://space.bilibili.com/176859859?spm_id_from=333.1007.0.0
